@@ -91,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
            public void onClick(View v) {
                listView.setSmoothScrollbarEnabled(true);
                listView.setSelection(pos++);
+               TextView soal = (TextView) findViewById(R.id.editText2);
+               soal.setText(itemNames.get(pos));
            }
        });
 
@@ -99,6 +101,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick (View v) {
                 listView.setSmoothScrollbarEnabled(true);
                 listView.setSelection(pos--);
+                TextView soal = (TextView) findViewById(R.id.editText2);
+                soal.setText(itemNames.get(pos));
             }
         });
 
