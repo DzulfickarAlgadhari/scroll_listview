@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tvOut;
     List<DataItem> dataItemList = SampleDataProvider.dataItemList;
     List<String> itemNames = new ArrayList<>();
+    List<String> itemDesc = new ArrayList<>();
     List<DataItem> mDataitem;
     int pos = 0;
 
@@ -56,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
             for (DataItem item : dataItemList) {
             // tvOut.append(item.getItemName() + "\n");
 
-        itemNames.add(item.getItemName());
+        itemNames.add(item.getNomerSoal());
+                itemDesc.add(item.getSoal());
     }
         ;
         Collections.sort(itemNames);
@@ -69,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         Collections.sort(dataItemList, new Comparator<DataItem>() {
             @Override
             public int compare(DataItem o1, DataItem o2) {
-                return o1.getItemName().compareTo(o2.getItemName());
+                return o1.getNomerSoal().compareTo(o2.getNomerSoal());
             }
 
         });
@@ -78,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView soal =(TextView) findViewById(R.id.editText2);
-                soal.setText(itemNames.get(position));
+                soal.setText(itemDesc.get(position));
             }
         });
 
@@ -92,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                listView.setSmoothScrollbarEnabled(true);
                listView.setSelection(pos++);
                TextView soal = (TextView) findViewById(R.id.editText2);
-               soal.setText(itemNames.get(pos));
+               soal.setText(itemDesc.get(pos));
            }
        });
 
@@ -102,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 listView.setSmoothScrollbarEnabled(true);
                 listView.setSelection(pos--);
                 TextView soal = (TextView) findViewById(R.id.editText2);
-                soal.setText(itemNames.get(pos));
+                soal.setText(itemDesc.get(pos));
             }
         });
 

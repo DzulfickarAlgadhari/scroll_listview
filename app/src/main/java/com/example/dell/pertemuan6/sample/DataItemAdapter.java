@@ -40,12 +40,12 @@ public class DataItemAdapter extends ArrayAdapter<DataItem> {
         }
 
         TextView tvName = (TextView) convertView.findViewById(R.id.itemNameText);
-        ImageView imgView = (ImageView) convertView.findViewById(R.id.imageView);
+
 
         DataItem item = mDataitem.get(position);
 
-        tvName.setText(item.getItemName());
-        imgView.setImageResource(R.drawable.yorha);
+        tvName.setText(item.getNomerSoal());
+
 
 
         return convertView;
