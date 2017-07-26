@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -61,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
                 itemDesc.add(item.getSoal());
     }
         ;
+
+        TextView soal = (TextView)findViewById(R.id.editText2);
+        soal.setText(itemDesc.get(0  ));
+
         Collections.sort(itemNames);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itemNames);
